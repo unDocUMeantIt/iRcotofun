@@ -1,0 +1,5 @@
+ChangeLog for package iRcotofun
+
+changes in version 0.02-1 (2015-12-13)
+changed:
+  - initial release as an R package (this has been a bash script before)

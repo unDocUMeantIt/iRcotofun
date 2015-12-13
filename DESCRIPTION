@@ -1,0 +1,19 @@
+Package: iRcotofun
+Type: Package
+Title: A Generator for Jeopardy-like Quiz Games (HTML)
+Author: Meik Michalke [aut, cre]
+Maintainer: Meik Michalke <meik.michalke@hhu.de>
+Depends:
+    R (>= 2.9.0),methods,base64enc,XiMpLe
+Description: Provides some functions and classes to build your own quiz with a
+    few lines of code. The result is a single HTML file, i.e., the quiz is played
+    using a web browser. The package was written to have fun at our famous DiagDiff
+    Weihnachtsfeier ;-)
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyLoad: yes
+URL: http://reaktanz.de/?c=hacking&s=iRcotofun
+Authors@R: c(person(given="Meik", family="Michalke", email="meik.michalke@hhu.de", role=c("aut", "cre")))
+Version: 0.02-1
+Date: 2015-12-13
+RoxygenNote: 5.0.1

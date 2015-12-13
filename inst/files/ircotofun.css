@@ -1,0 +1,286 @@
+body {
+  background-color: #FFFFFF;
+  text-align: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+* {
+  color: #000000;
+}
+
+th {
+  background-color: #000000;
+  color: #DDDDFF;
+  font-size: large; /* old */
+  font-size: 4vm; /* IE9 */
+  font-size: 4vmin;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.smallfont {
+  font-size: small; /* old */
+  font-size: 2vm; /* IE9 */
+  font-size: 2vmin;
+}
+
+.normalfont {
+  font-size: initial; /* old */
+  font-size: 3.5vm; /* IE9 */
+  font-size: 3.5vmin;
+}
+
+.largefont {
+  font-size: large; /* old */
+  font-size: 4vm; /* IE9 */
+  font-size: 4vmin;
+}
+
+.hugefont {
+  font-size: x-large; /* old */
+  font-size: 5vm; /* IE9 */
+  font-size: 5vmin;
+}
+
+.cat {
+  background-color: #EEEEEE;
+  vertical-align: middle;
+}
+
+span.cat {
+  background-color: #FFFFFF;
+}
+
+
+.off {
+  color: #CCCCCC;
+  vertical-align: middle;
+  display: none;
+}
+
+.zelle {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.zellenrand {
+  border-color: white;
+  border-style: solid;
+  font-weight: bold;
+}
+
+.zellenrandoff {
+  color: #CCCCCC;
+  background-color: #FFFFFF;
+}
+
+.roundborders {
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+}
+
+a.reenable {
+  font-size: small !important;
+  font-size: 2vm !important; /* IE9 */
+  font-size: 2vmin !important;
+  color: #CCCCCC;
+}
+
+a:link.reenable {
+  text-decoration: none;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+tr.cellofftop {
+  height:90%;
+}
+
+td.cellofftop {
+  vertical-align: middle;
+  text-align: center;
+}
+
+tr.celloffbottom {
+  height:5%;
+}
+
+td.celloffbottom {
+  vertical-align: bottom !important;
+  text-align: right !important;
+}
+
+.frage {
+  position: absolute;
+  top:0;
+  left: 15%;
+  bottom:0;
+  right:15%;
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  background-color: #DDDDDD;
+  color: #000000;
+  text-align: center;
+  vertical-align: middle;
+  display:none;
+}
+
+.fragekopf {
+  background-color: #000000;
+  color: #DDDDFF;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.fragekopfspan {
+  background-color: #000000;
+  position: absolute;
+  top:0;
+  left: 0%;
+  width: 100%;
+  height: 10%;
+}
+
+.fragekoerper {
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.fragekoerperspan {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  width: 100%;
+  height: 70%;
+}
+
+.fragefuss {
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+a.fragefuss {
+  font-size: large; /* old */
+  font-size: 4vm; /* IE9 */
+  font-size: 4vmin;
+}
+
+.fragefussspan {
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  width: 100%;
+  height: 10%;
+}
+
+.fragepunktspan {
+  position: absolute;
+  top: 90%;
+  left: 0%;
+  width: 100%;
+  height: 10%;
+}
+
+.puenktskes {
+  text-align: center;
+  background-color:#e8e8e8; text-shadow:rgba(255,255,255,.1) -1px -1px 1px,rgba(0,0,0,.5) 1px 1px 1px;
+  vertical-align: middle;
+  width: 90%;
+  height: 90%;
+  border: none;
+}
+
+.punktbutton {
+  width: 25%;
+  height: 10%;
+}
+
+.rot {
+  background-color: red;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: white;
+}
+
+.gruen {
+  background-color: green;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: white;
+}
+
+.gelb {
+  background-color: yellow;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: black;
+}
+
+.blau {
+  background-color: blue;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: white;
+}
+
+.ergrot {
+  position: absolute;
+  left: 1%;
+  top: 1%;
+  height: 10%;
+  width: 13%;
+}
+
+.erggelb {
+  position: absolute;
+  right: 1%;
+  top: 1%;
+  height: 10%;
+  width: 13%;
+}
+
+.erggruen {
+  position: absolute;
+  left: 1%;
+  bottom: 1%;
+  height: 10%;
+  width: 13%;
+}
+
+.ergblau {
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  height: 10%;
+  width: 13%;
+}
+
+.imagediv {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.image {
+  height: 65vmin;
+  height: 65vm; /* IE9 */
+  width: auto;
+}

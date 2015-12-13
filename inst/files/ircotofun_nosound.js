@@ -1,0 +1,5 @@
+function playsound() {
+}
+
+function stopsound() {
+}
