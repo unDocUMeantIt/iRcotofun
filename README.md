@@ -2,6 +2,8 @@
 
 Here's an idea for your next office party: This R package creates a one-file jeopardy-like quiz game in HTML. You must come up with the questions and answers yourself, of course.
 
+![main window](/inst/screenshots/main_window.jpg?raw=true "main window")
+
 ## Installation via GitHub
 
 To install it directly from GitHub, you can use `install_github()` from the [devtools](https://github.com/hadley/devtools) package:
