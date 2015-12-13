@@ -1,0 +1,33 @@
+body {
+  background-color: #FFFFFF;
+  text-align: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.filler {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  height: 20em;
+  width: 20em;
+  margin-top: -10em;
+  margin-left: -10em;
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.imagediv {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.image {
+  height: 65vmin;
+  height: 65vm; /* IE9 */
+  width: auto;
+}
