@@ -12,7 +12,14 @@ function replace(show,hide,fat,light) {
   fatlight(fat,light);
 }
 
-function qachange(valon,valoff,qaon,fat,light) {
+function getgroupnames(r,g,y,b) {
+  document.getElementById(r).value = document.getElementById("namerot").value;
+  document.getElementById(g).value = document.getElementById("namegruen").value;
+  document.getElementById(y).value = document.getElementById("namegelb").value;
+  document.getElementById(b).value = document.getElementById("nameblau").value;
+}
+
+function qachange(valon,valoff,qaon,fat,light,r,g,y,b) {
   playsound();
   document.getElementById(valon).style.display = "inline";
   document.getElementById(valoff).style.display = "none";
@@ -21,7 +28,12 @@ function qachange(valon,valoff,qaon,fat,light) {
   document.getElementById("erggruen").style.display = "none";
   document.getElementById("erggelb").style.display = "none";
   document.getElementById("ergblau").style.display = "none";
+  document.getElementById("namespanrot").style.display = "none";
+  document.getElementById("namespangruen").style.display = "none";
+  document.getElementById("namespangelb").style.display = "none";
+  document.getElementById("namespanblau").style.display = "none";
   fatlight(fat,light);
+  getgroupnames(r,g,y,b);
 }
 
 function antwortaus(antwort) {
@@ -31,6 +43,10 @@ function antwortaus(antwort) {
   document.getElementById("erggruen").style.display = "inline";
   document.getElementById("erggelb").style.display = "inline";
   document.getElementById("ergblau").style.display = "inline";
+  document.getElementById("namespanrot").style.display = "inline";
+  document.getElementById("namespangruen").style.display = "inline";
+  document.getElementById("namespangelb").style.display = "inline";
+  document.getElementById("namespanblau").style.display = "inline";
 }
 
 function points(answer,group,value,off,offcolor) {
@@ -40,6 +56,10 @@ function points(answer,group,value,off,offcolor) {
   document.getElementById("erggruen").style.display = "inline";
   document.getElementById("erggelb").style.display = "inline";
   document.getElementById("ergblau").style.display = "inline";
+  document.getElementById("namespanrot").style.display = "inline";
+  document.getElementById("namespangruen").style.display = "inline";
+  document.getElementById("namespangelb").style.display = "inline";
+  document.getElementById("namespanblau").style.display = "inline";
   document.getElementById(off).style.color = offcolor;
   valueold = eval(window.document.getElementById(group).value);
   valuenew = eval(value);

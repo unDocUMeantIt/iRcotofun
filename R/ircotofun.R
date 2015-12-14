@@ -88,7 +88,10 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
     qStyle <- "display:none;"
     aStyle <- ""
   }
-
+  
+  colors <- c("rot", "gruen", "gelb", "blau")
+  lightcolors <- c("LightPink", "LightGreen", "Gold", "LightSkyBlue")
+  
   ## head
   iRcPath <- installed.packages()["iRcotofun", "LibPath"]
   if(is.null(css)){
@@ -173,10 +176,11 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
                       "javascript:qachange('r",thisPoint,"c",thisCatNum,"off',",
                       "'r",thisPoint,"c",thisCatNum,"cat','fragantwtabr",thisPoint,"c",thisCatNum,"',",
                       if(isTRUE(questions)){
-                        paste0("'showar",thisPoint,"c",thisCatNum,"','showqr",thisPoint,"c",thisCatNum,"')")
+                        paste0("'showar",thisPoint,"c",thisCatNum,"','showqr",thisPoint,"c",thisCatNum,"',")
                       } else {
-                        paste0("'showqr",thisPoint,"c",thisCatNum,"','showar",thisPoint,"c",thisCatNum,"')")
-                      }
+                        paste0("'showqr",thisPoint,"c",thisCatNum,"','showar",thisPoint,"c",thisCatNum,"',")
+                      },
+                      paste0("'", paste0("namer",thisPoint,"c",thisCatNum, colors, collapse="','"), "')")
                     ),
                     href="#"
                   ),
@@ -354,59 +358,54 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
           table_(
             tbody(
               tr(
-                td(
-                  a(
-                    as.character(points[thisItemNum]),
-                    attrs=list(
-                      class="rot",
-                      onclick=paste0("javascript:points('fragantwtabr",thisItemNum,"c",thisCatNum,"','punkterot','",
-                        as.character(points[thisItemNum]), "','r",thisItemNum,"c",thisCatNum,"valueoff','LightPink')"),
-                      href="#"
+                sapply(1:length(colors),
+                  function(colnum){
+                    td(
+                      a(
+                        as.character(points[thisItemNum]),
+                        attrs=list(
+                          class=colors[colnum],
+                          onclick=paste0("javascript:points('fragantwtabr",thisItemNum,"c",thisCatNum,"','punkte",colors[colnum],"','",
+                            as.character(points[thisItemNum]), "','r",thisItemNum,"c",thisCatNum,"valueoff','",lightcolors[colnum],"')"),
+                          href="#"
+                        )
+                      ),
+                      attrs=list(class=paste0(colors[colnum], " fragefuss punktbutton largefont roundborders"))
                     )
-                  ),
-                  attrs=list(class="rot fragefuss punktbutton largefont roundborders")
-                ),
-                td(
-                  a(
-                    as.character(points[thisItemNum]),
-                    attrs=list(
-                      class="gruen",
-                      onclick=paste0("javascript:points('fragantwtabr",thisItemNum,"c",thisCatNum,"','punktegruen','",
-                        as.character(points[thisItemNum]), "','r",thisItemNum,"c",thisCatNum,"valueoff','LightGreen')"),
-                      href="#"
-                    )
-                  ),
-                  attrs=list(class="gruen fragefuss punktbutton largefont roundborders")
-                ),
-                td(
-                  a(
-                    as.character(points[thisItemNum]),
-                    attrs=list(
-                      class="gelb",
-                      onclick=paste0("javascript:points('fragantwtabr",thisItemNum,"c",thisCatNum,"','punktegelb','",
-                        as.character(points[thisItemNum]), "','r",thisItemNum,"c",thisCatNum,"valueoff','Gold')"),
-                      href="#"
-                    )
-                  ),
-                  attrs=list(class="gelb fragefuss punktbutton largefont roundborders")
-                ),
-                td(
-                  a(
-                    as.character(points[thisItemNum]),
-                    attrs=list(
-                      class="blau",
-                      onclick=paste0("javascript:points('fragantwtabr",thisItemNum,"c",thisCatNum,"','punkteblau','",
-                        as.character(points[thisItemNum]), "','r",thisItemNum,"c",thisCatNum,"valueoff','LightSkyBlue')"),
-                      href="#"
-                    )
-                  ),
-                  attrs=list(class="blau fragefuss punktbutton largefont roundborders")
+                  }
                 )
               )
             ),
             attrs=list(class="fragefuss")
           ),
           attrs=list(class="fragepunktspan")
+        ),
+        # foot group names
+        span(
+          table_(
+            tbody(
+              tr(
+                sapply(1:length(colors),
+                  function(colnum){
+                    td(
+                      XMLNode("input",
+                        attrs=list(
+                          id=paste0("namer",thisItemNum,"c",thisCatNum, colors[colnum]),
+                          class=paste0(colors[colnum], " puenktskes smallfont"),
+                          type="text",
+                          size="5",
+                          readonly=""
+                        )
+                      ),
+                      attrs=list(class=paste0(colors[colnum], " fragefuss punktbutton smallfont roundborders"))
+                    )
+                  }
+                )
+              )
+            ),
+            attrs=list(class="fragefuss")
+          ),
+          attrs=list(class="fragegruppenspan")
         ),
         # attributes for the main <div>
         attrs=list(
@@ -443,6 +442,33 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
         attrs=list(
           id=paste0("erg", thisGroup),
           class=paste0("erg", thisGroup)
+        )
+      )
+    )
+    # group names
+    fullHTML <- append(fullHTML,
+      span(
+        table_(
+          tbody(
+            tr(
+              td(
+                XMLNode("input",
+                  attrs=list(
+                    id=paste0("name", thisGroup),
+                    class=paste0(thisGroup, " puenktskes smallerfont"),
+                    type="text",
+                    size="5"
+                  )
+                ),
+                attrs=list(class=paste0(thisGroup, " roundborders"))
+              )
+            )
+          ),
+          attrs=list(class="zelle")
+        ),
+        attrs=list(
+          id=paste0("namespan", thisGroup),
+          class=paste0("name", thisGroup)
         )
       )
     )
