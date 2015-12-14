@@ -1,3 +1,5 @@
+var allPoints = new Array("punkterot","punktegruen","punktegelb","punkteblau");
+
 function fatlight(fat,light) {
   document.getElementById(fat).style.fontWeight = "bold";
   document.getElementById(fat).style.textDecoration = "underline";
@@ -13,10 +15,24 @@ function replace(show,hide,fat,light) {
 }
 
 function getgroupnames(r,g,y,b) {
-  document.getElementById(r).value = document.getElementById("namerot").value;
-  document.getElementById(g).value = document.getElementById("namegruen").value;
-  document.getElementById(y).value = document.getElementById("namegelb").value;
-  document.getElementById(b).value = document.getElementById("nameblau").value;
+  var nr = document.getElementById("namerot").value;
+  var ng = document.getElementById("namegruen").value;
+  var ny = document.getElementById("namegelb").value;
+  var nb = document.getElementById("nameblau").value;
+  document.getElementById(r).value = nr;
+  document.getElementById(g).value = ng;
+  document.getElementById(y).value = ny;
+  document.getElementById(b).value = nb;
+}
+
+function blink(on){
+  for (var i in allPoints) {
+    if(allPoints[i] === on){
+      document.getElementById(allPoints[i]).className += " blink";
+    } else {
+      document.getElementById(allPoints[i]).className = document.getElementById(allPoints[i]).className.replace(/(?:^|\s)blink(?!\S)/g,'');
+    }
+  }
 }
 
 function qachange(valon,valoff,qaon,fat,light,r,g,y,b) {
@@ -47,9 +63,10 @@ function antwortaus(antwort) {
   document.getElementById("namespangruen").style.display = "inline";
   document.getElementById("namespangelb").style.display = "inline";
   document.getElementById("namespanblau").style.display = "inline";
+  blink("off");
 }
 
-function points(answer,group,value,off,offcolor) {
+function points(answer,group,value,off,offcolor,active) {
   stopsound();
   document.getElementById(answer).style.display = "none";
   document.getElementById("ergrot").style.display = "inline";
@@ -65,6 +82,7 @@ function points(answer,group,value,off,offcolor) {
   valuenew = eval(value);
   result = eval(valuenew + valueold);
   document.getElementById(group).value = result;
+  blink(active);
 }
 
 function reset(zeige,verstecke,frage,antwort) {
@@ -72,4 +90,5 @@ function reset(zeige,verstecke,frage,antwort) {
   document.getElementById(verstecke).style.display = "none";
   document.getElementById(antwort).style.display = "inline";
   document.getElementById(frage).style.display = "none";
+  blink("off");
 }

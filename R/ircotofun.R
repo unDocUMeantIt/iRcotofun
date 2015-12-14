@@ -366,7 +366,7 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
                         attrs=list(
                           class=colors[colnum],
                           onclick=paste0("javascript:points('fragantwtabr",thisItemNum,"c",thisCatNum,"','punkte",colors[colnum],"','",
-                            as.character(points[thisItemNum]), "','r",thisItemNum,"c",thisCatNum,"valueoff','",lightcolors[colnum],"')"),
+                            as.character(points[thisItemNum]), "','r",thisItemNum,"c",thisCatNum,"valueoff','",lightcolors[colnum],"','punkte",colors[colnum],"')"),
                           href="#"
                         )
                       ),
@@ -417,7 +417,7 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
     }
   }
   ## groups
-  for (thisGroup in c("rot", "gruen", "gelb", "blau")){
+  for (thisGroup in colors){
     fullHTML <- append(fullHTML,
       span(
         table_(
@@ -433,7 +433,9 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
                     value="0"
                   )
                 ),
-                attrs=list(class=paste0(thisGroup, " roundborders"))
+                attrs=list(
+                  class=paste0(thisGroup, " roundborders")
+                )
               )
             )
           ),
