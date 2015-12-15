@@ -222,10 +222,16 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
                     onclick=paste0(
                       "javascript:reset('r",thisPoint,"c",thisCatNum,"cat','r",thisPoint,"c",thisCatNum,"off',",
                       if(isTRUE(questions)){
-                        paste0("'antwortr",thisPoint,"c",thisCatNum,"','frager",thisPoint,"c",thisCatNum,"')")
+                        paste0("'antwortr",thisPoint,"c",thisCatNum,"','frager",thisPoint,"c",thisCatNum,"'")
                       } else {
-                        paste0("'frager",thisPoint,"c",thisCatNum,"','antwortr",thisPoint,"c",thisCatNum,"')")
-                      }
+                        paste0("'frager",thisPoint,"c",thisCatNum,"','antwortr",thisPoint,"c",thisCatNum,"'")
+                      },
+                      paste0(sapply(1:length(colors),
+                        function(colnum){
+                          paste0(",'tdpointsr",thisPoint,"c",thisCatNum,colors[colnum],"','tdgnamer",thisPoint,"c",thisCatNum,colors[colnum],"'")
+                        }
+                      ), collapse=""),
+                      ")" 
                     ),
                     href="#")
                 ),
@@ -364,13 +370,26 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
                       a(
                         as.character(points[thisItemNum]),
                         attrs=list(
-                          class=colors[colnum],
+                          class=paste0(colors[colnum], " largefont"),
                           onclick=paste0("javascript:points('fragantwtabr",thisItemNum,"c",thisCatNum,"','punkte",colors[colnum],"','",
                             as.character(points[thisItemNum]), "','r",thisItemNum,"c",thisCatNum,"valueoff','",lightcolors[colnum],"','punkte",colors[colnum],"')"),
                           href="#"
                         )
                       ),
-                      attrs=list(class=paste0(colors[colnum], " fragefuss punktbutton largefont roundborders"))
+                      br(),
+                      a(
+                        paste0("-", as.character(points[thisItemNum])),
+                        attrs=list(
+                          class=paste0(colors[colnum], " smallfont"),
+                          onclick=paste0("javascript:wrong('punkte",colors[colnum],"','", as.character(points[thisItemNum]),
+                          "','tdpointsr",thisItemNum,"c",thisCatNum,colors[colnum],"','tdgnamer",thisItemNum,"c",thisCatNum,colors[colnum],"')"),
+                          href="#"
+                        )
+                      ),
+                      attrs=list(
+                        id=paste0("tdpointsr",thisItemNum,"c",thisCatNum,colors[colnum]),
+                        class=paste0(colors[colnum], " fragefuss punktbutton roundborders")
+                      )
                     )
                   }
                 )
@@ -397,7 +416,10 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
                           readonly=""
                         )
                       ),
-                      attrs=list(class=paste0(colors[colnum], " fragefuss punktbutton smallfont roundborders"))
+                      attrs=list(
+                        id=paste0("tdgnamer",thisItemNum,"c",thisCatNum,colors[colnum]),
+                        class=paste0(colors[colnum], " fragefuss punktbutton smallfont roundborders")
+                      )
                     )
                   }
                 )
@@ -476,6 +498,25 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
     )
   }
 
+  ## random group select
+  fullHTML <- append(fullHTML,
+    span(
+      a(
+        attrs=list(
+          class="random",
+          onclick="javascript:blinkrandom()",
+          title="randomly pick a team!",
+          href="#"
+        ),
+        "&orarr;"
+      ),
+      attrs=list(
+        class="random",
+        id="randomgroup"
+      )
+    )
+  )
+  
   ## sound
   if(!is.null(sound)){
       if(file.exists(sound)){

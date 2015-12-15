@@ -331,6 +331,25 @@ a.fragefuss {
   width: auto;
 }
 
+.random {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+}
+
+a.random {
+  font-size: x-large; /* old */
+  font-size: 5vm; /* IE9 */
+  font-size: 5vmin;
+  color: #CCCCCC;
+}
+
+a:link.random {
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+}
+
 blink, .blink {
   -webkit-animation: blink 1s step-end infinite;
   -moz-animation: blink 1s step-end infinite;

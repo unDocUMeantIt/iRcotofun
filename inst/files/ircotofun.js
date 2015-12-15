@@ -35,6 +35,12 @@ function blink(on){
   }
 }
 
+// our random group selector with a lot of bling-bling
+function blinkrandom(){
+  var randgroup = Math.floor(Math.random() * 4);
+  blink(allPoints[randgroup]);
+}
+
 function qachange(valon,valoff,qaon,fat,light,r,g,y,b) {
   playsound();
   document.getElementById(valon).style.display = "inline";
@@ -85,10 +91,27 @@ function points(answer,group,value,off,offcolor,active) {
   blink(active);
 }
 
-function reset(zeige,verstecke,frage,antwort) {
+function wrong(group,value,offp,offn) {
+  valueold = eval(window.document.getElementById(group).value);
+  valuenew = eval(value);
+  result = eval(valueold - valuenew);
+  document.getElementById(group).value = result;
+  document.getElementById(offp).style.display = "none";
+  document.getElementById(offn).style.display = "none";
+}
+
+function reset(zeige,verstecke,frage,antwort,rp,gp,yp,bp,rn,gn,yn,bn) {
   document.getElementById(zeige).style.display = "inline";
   document.getElementById(verstecke).style.display = "none";
   document.getElementById(antwort).style.display = "inline";
   document.getElementById(frage).style.display = "none";
+  document.getElementById(rp).style.display = "inline";
+  document.getElementById(gp).style.display = "inline";
+  document.getElementById(yp).style.display = "inline";
+  document.getElementById(bp).style.display = "inline";
+  document.getElementById(rn).style.display = "inline";
+  document.getElementById(gn).style.display = "inline";
+  document.getElementById(yn).style.display = "inline";
+  document.getElementById(bn).style.display = "inline";
   blink("off");
 }
