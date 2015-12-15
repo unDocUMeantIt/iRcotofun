@@ -8,6 +8,10 @@ body {
   color: #000000;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 th {
   background-color: #000000;
   color: #DDDDFF;
@@ -333,8 +337,8 @@ a.fragefuss {
 
 .random {
   position: absolute;
-  right: 5%;
-  top: 50%;
+  right: 6.5%;
+  top: 45%;
 }
 
 a.random {

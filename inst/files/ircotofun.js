@@ -54,6 +54,7 @@ function qachange(valon,valoff,qaon,fat,light,r,g,y,b) {
   document.getElementById("namespangruen").style.display = "none";
   document.getElementById("namespangelb").style.display = "none";
   document.getElementById("namespanblau").style.display = "none";
+  document.getElementById("randomgroup").style.display = "none";
   fatlight(fat,light);
   getgroupnames(r,g,y,b);
 }
@@ -69,6 +70,7 @@ function antwortaus(antwort) {
   document.getElementById("namespangruen").style.display = "inline";
   document.getElementById("namespangelb").style.display = "inline";
   document.getElementById("namespanblau").style.display = "inline";
+  document.getElementById("randomgroup").style.display = "inline";
   blink("off");
 }
 
@@ -83,6 +85,7 @@ function points(answer,group,value,off,offcolor,active) {
   document.getElementById("namespangruen").style.display = "inline";
   document.getElementById("namespangelb").style.display = "inline";
   document.getElementById("namespanblau").style.display = "inline";
+  document.getElementById("randomgroup").style.display = "inline";
   document.getElementById(off).style.color = offcolor;
   valueold = eval(window.document.getElementById(group).value);
   valuenew = eval(value);
