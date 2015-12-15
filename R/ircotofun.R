@@ -575,37 +575,17 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
 # internal helper function to write questions/answers
 pasteItem <- function(item, name, category, points, missing="(no question)"){
   if(identical(name, "img")){
-    if(file.exists(item)){
-      img64 <- base64encode(item, linewidth=80, newline="\n")
-      # try to set the image type
-      if(grepl("png$", item, ignore.case=TRUE)){
-        imgType <- "png"
-      } else if(grepl("jpg$|jpeg$", item, ignore.case=TRUE)) {
-        imgType <- "jpeg"
-      } else if(grepl("gif$", item, ignore.case=TRUE)) {
-        imgType <- "gif"
-      } else {
-        warning(
-          paste0("Cannot detect image type, please covert into *.png, *.jpg or *.gif if there are problems:\n  ", item)
-        )
-        imgType <- "bmp"
-      }
-      return(
-        div(
-          XMLNode("img",
-            attrs=list(
-              class="image",
-              src=paste0("data:image/", imgType, ";base64,", img64),
-              alt=paste0(category, " :: ", points))
-          ),
-          attrs=list(class="imagediv")
-        )
+    return(
+      div(
+        img(
+          attrs=list(
+            class="image",
+            src=item,
+            alt=paste0(category, " :: ", points))
+        ),
+        attrs=list(class="imagediv")
       )
-    } else {
-      stop(simpleError(paste0(
-        "The following file cannot be found:\n  ", item
-      )))
-    }
+    )
   } else if(identical(name, "text")){
     return(item)
   } else if(identical(name, "html")){

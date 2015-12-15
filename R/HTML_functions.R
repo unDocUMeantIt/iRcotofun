@@ -103,9 +103,39 @@ em <- function(..., attrs=NULL){
   return(XMLNode("em", attrs=attrs, .children=list(...)))
 }
 
+#' @param embed Logical, whether the specified \code{src} file should be ecoded using \code{\link[base64enc:base64enc]{base64enc}}
+#'    to ensure they are embedded into the HTML file. This keeps your presentation from breaking if you move it somewhere else.
+#'    It will work with ordinary file paths as well, as long as all files remain in place.
 #' @rdname HTML_functions
 #' @export
-img <- function(attrs=NULL){
+img <- function(attrs=NULL, embed=TRUE){
+  image <- attrs[["src"]]
+  if(!is.null(image) & file.exists(image)){
+    if(isTRUE(embed)){
+      img64 <- base64encode(image, linewidth=80, newline="\n")
+      # try to set the image type
+      if(grepl("svg$", image, ignore.case=TRUE)) {
+        imgType <- "svg+xml"
+      } else if(grepl("png$", image, ignore.case=TRUE)){
+        imgType <- "png"
+      } else if(grepl("jpg$|jpeg$", image, ignore.case=TRUE)) {
+        imgType <- "jpeg"
+      } else if(grepl("gif$", image, ignore.case=TRUE)) {
+        imgType <- "gif"
+      } else {
+        warning(
+          paste0("Cannot detect image type, please covert into *.svg, *.png, *.jpg or *.gif if there are problems:\n  ", image)
+        )
+        imgType <- "bmp"
+      }
+      attrs[["src"]] <- paste0("data:image/", imgType, ";base64,", img64)
+    } else {}
+  } else {
+    stop(simpleError(paste0(
+      "The following file cannot be found:\n  ", image
+    )))
+  }
+
   return(XMLNode("img", attrs=attrs))
 }
 
