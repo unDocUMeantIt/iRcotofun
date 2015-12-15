@@ -99,8 +99,8 @@ function wrong(group,value,offp,offn) {
   valuenew = eval(value);
   result = eval(valueold - valuenew);
   document.getElementById(group).value = result;
-  document.getElementById(offp).style.display = "none";
-  document.getElementById(offn).style.display = "none";
+  document.getElementById(offp).style.visibility = "hidden";
+  document.getElementById(offn).style.visibility = "hidden";
 }
 
 function reset(zeige,verstecke,frage,antwort,rp,gp,yp,bp,rn,gn,yn,bn) {
@@ -108,13 +108,13 @@ function reset(zeige,verstecke,frage,antwort,rp,gp,yp,bp,rn,gn,yn,bn) {
   document.getElementById(verstecke).style.display = "none";
   document.getElementById(antwort).style.display = "inline";
   document.getElementById(frage).style.display = "none";
-  document.getElementById(rp).style.display = "inline";
-  document.getElementById(gp).style.display = "inline";
-  document.getElementById(yp).style.display = "inline";
-  document.getElementById(bp).style.display = "inline";
-  document.getElementById(rn).style.display = "inline";
-  document.getElementById(gn).style.display = "inline";
-  document.getElementById(yn).style.display = "inline";
-  document.getElementById(bn).style.display = "inline";
+  document.getElementById(rp).style.visibility = "visible";
+  document.getElementById(gp).style.visibility = "visible";
+  document.getElementById(yp).style.visibility = "visible";
+  document.getElementById(bp).style.visibility = "visible";
+  document.getElementById(rn).style.visibility = "visible";
+  document.getElementById(gn).style.visibility = "visible";
+  document.getElementById(yn).style.visibility = "visible";
+  document.getElementById(bn).style.visibility = "visible";
   blink("off");
 }

@@ -481,7 +481,10 @@ ircotofun <- function(..., points, file=NULL, title="iRcotofun", sound=NULL, css
                     id=paste0("name", thisGroup),
                     class=paste0(thisGroup, " puenktskes smallerfont"),
                     type="text",
-                    size="5"
+                    size="12",
+                    value=paste0("&lt;team ",thisGroup,"&gt;"),
+                    onblur=paste0("javascript:if(this.value=='')this.value='&lt;team ",thisGroup,"&gt;';"),
+                    onfocus=paste0("javascript:if(this.value=='&lt;team ",thisGroup,"&gt;')this.value='';")
                   )
                 ),
                 attrs=list(class=paste0(thisGroup, " roundborders"))
