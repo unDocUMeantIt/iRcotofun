@@ -5,6 +5,7 @@
 \alias{br}
 \alias{div}
 \alias{em}
+\alias{img}
 \alias{p}
 \alias{span}
 \alias{strong}
@@ -38,6 +39,8 @@ tbody(..., attrs = NULL)
 strong(..., attrs = NULL)
 
 em(..., attrs = NULL)
+
+img(attrs = NULL)
 }
 \arguments{
 \item{...}{Child nodes of this node.}

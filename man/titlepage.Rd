@@ -11,7 +11,10 @@ titlepage(..., quizfile, file = NULL, title = "iRcotofun", sound = NULL,
 \item{...}{Objects of class \code{\link[XiMpLe:XiMpLe.node-class]{XiMpLe.node}},
       the page content.}
 
-\item{quizfile}{Character string, path to the actual quiz file.}
+\item{quizfile}{Character string,
+      full path to the actual quiz file. The resulting title page will
+use a relative link if both files are in the same directory,
+      so it's easy to move both afterwards.}
 
 \item{file}{Character string, path to a file to write to.}
 
@@ -35,25 +38,49 @@ In case you would like to show off with a huge show,
       use this function to generate a title page
 that plays some intro music, before you open the actual quiz.
 }
+\note{
+: You should encode images etc. with \code{\link[base64enc:base64enc]{base64enc}} like
+shown in the example,
+      to ensure they are embedded into the HTML file. This keeps your presentation
+from breaking if you move it somewhere else. It will work with ordinary file paths as well,
+      as
+long as all files remain in place.
+}
 \examples{
 \dontrun{
-logo <- XMLNode("div",
-   XMLNode("img",
-     attrs=list(
-       src=file.path("path", "to", "myQuiz.svg"),
-       class="image",
-       style="margin-top: 10\%;"
-     )
-   ),
-   attrs=list(class="imagediv")
- )
- titlepage(
-   logo,
-   quizfile=file.path("path", "to", "myQuiz.html"),
-   file=file.path("path", "to", "index.html"),
-   sound=file.path("path", "to", "myQuiz_main_title.ogg"),
-   overwrite=TRUE
- )
+# for a logo you'll probably get best results with scalable SVG
+logo <- div(
+  img(
+    attrs=list(
+      src=file.path("path", "to", "myQuiz.svg"),
+      class="image",
+      style="margin-top: 10\%;"
+    )
+  ),
+  attrs=list(class="imagediv")
+)
+
+# even better: embed the image into the HTML file
+img64 <- base64encode(file.path("path", "to", "myQuiz.svg"), linewidth=80, newline="\\n")
+logo <- div(
+  img(
+    attrs=list(
+      src=paste0("data:image/svg+xml;base64,", img64),
+      class="image",
+      style="margin-top: 10\%;"
+    )
+  ),
+  attrs=list(class="imagediv")
+)
+
+# finally, write the title page
+titlepage(
+  logo,
+  quizfile=file.path("path", "to", "myQuiz.html"),
+  file=file.path("path", "to", "index.html"),
+  sound=file.path("path", "to", "myQuiz_main_title.ogg"),
+  overwrite=TRUE
+)
 }
 }
 

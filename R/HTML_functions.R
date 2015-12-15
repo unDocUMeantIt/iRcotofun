@@ -103,6 +103,12 @@ em <- function(..., attrs=NULL){
   return(XMLNode("em", attrs=attrs, .children=list(...)))
 }
 
+#' @rdname HTML_functions
+#' @export
+img <- function(attrs=NULL){
+  return(XMLNode("img", attrs=attrs))
+}
+
 # #' @rdname HTML_functions
 # #' @export
 #  <- function(..., attrs=NULL){
