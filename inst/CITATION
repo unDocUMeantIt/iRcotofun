@@ -2,12 +2,12 @@ bibentry("Manual",
     title="iRcotofun: A Generator for Jeopardy-Like Quiz Games (HTML)",
     author="Meik Michalke",
     year="2015",
-    note="(Version 0.02-1)",
+    note="(Version 0.02-2)",
     url="http://reaktanz.de/?c=hacking&s=iRcotofun",
 
     textVersion =
     paste("Michalke, M. (2015). ",
-        "iRcotofun: A Generator for Jeopardy-Like Quiz Games (HTML) (Version 0.02-1). ",
+        "iRcotofun: A Generator for Jeopardy-Like Quiz Games (HTML) (Version 0.02-2). ",
         "Available from http://reaktanz.de/?c=hacking&s=iRcotofun",
         sep=""),
 
