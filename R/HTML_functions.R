@@ -32,6 +32,7 @@
 #' @param attrs A named list of attributes. 
 #' @return An object of class \code{XiMpLe.node}.
 #' @rdname HTML_functions
+#' @import XiMpLe
 #' @export
 br <- function(){
   return(XMLNode("br"))
@@ -103,7 +104,7 @@ em <- function(..., attrs=NULL){
   return(XMLNode("em", attrs=attrs, .children=list(...)))
 }
 
-#' @param embed Logical, whether the specified \code{src} file should be ecoded using \code{\link[base64enc:base64enc]{base64enc}}
+#' @param embed Logical, whether the specified \code{src} file should be ecoded using \code{\link[base64enc:base64encode]{base64encode}}
 #'    to ensure they are embedded into the HTML file. This keeps your presentation from breaking if you move it somewhere else.
 #'    It will work with ordinary file paths as well, as long as all files remain in place.
 #' @rdname HTML_functions

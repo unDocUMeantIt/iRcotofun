@@ -48,7 +48,7 @@ img(attrs = NULL, embed = TRUE)
 \item{attrs}{A named list of attributes.}
 
 \item{embed}{Logical,
-      whether the specified \code{src} file should be ecoded using \code{\link[base64enc:base64enc]{base64enc}}
+      whether the specified \code{src} file should be ecoded using \code{\link[base64enc:base64encode]{base64encode}}
 to ensure they are embedded into the HTML file. This keeps your presentation from breaking if you move it somewhere else.
 It will work with ordinary file paths as well, as long as all files remain in place.}
 }

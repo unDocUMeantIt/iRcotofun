@@ -5,14 +5,14 @@
 \alias{iRcotofun-package}
 \title{The iRcotofun Package}
 \description{
-A Generator for Jeopardy-like Quiz Games (HTML).
+A Generator for Jeopardy-Like Quiz Games (HTML).
 }
 \details{
 \tabular{ll}{
 Package: \tab iRcotofun\cr
 Type: \tab Package\cr
 Version: \tab 0.02-1\cr
-Date: \tab 2015-12-15\cr
+Date: \tab 2015-12-16\cr
 Depends: \tab R (>= 2.9.0),methods,base64enc,XiMpLe\cr
 Encoding: \tab UTF-8\cr
 License: \tab GPL (>= 3)\cr

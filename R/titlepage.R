@@ -31,6 +31,8 @@
 #' @return An object of class \code{XiMpLe.doc}, or (if \code{file} is specified) no visible
 #'    return value.
 #' @rdname titlepage
+#' @import XiMpLe
+#' @import base64enc
 #' @export
 #' @examples
 #' \dontrun{

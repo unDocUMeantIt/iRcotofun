@@ -1,0 +1,16 @@
+Source: r-other-reaktanz-ircotofun
+Section: math
+Priority: optional
+Maintainer: m.eik michalke <meik.michalke@hhu.de>
+Build-Depends-Indep: debhelper (>> 7.0.0), r-base-dev (>= 3.2.0), cdbs, r-cran-base64enc, r-cran-ximple | r-other-reaktanz-ximple | r-other-rkward-ximple
+Standards-Version: 3.9.3.1
+Homepage: http://reaktanz.de/?c=hacking&s=iRcotofun
+
+Package: r-other-reaktanz-ircotofun
+Architecture: all
+Section: math
+Depends: r-base-core (>= 3.2.0), r-cran-base64enc, r-cran-ximple | r-other-reaktanz-ximple | r-other-rkward-ximple
+Description: GNU R package: Provides some functions and classes to build your own quiz with a few lines of code. The result is a single HTML file, i.e., the quiz is played using a web browser. The package was written to have
+ fun at our famous DiagDiff Weihnachtsfeier ;-)
+Homepage: http://reaktanz.de/?c=hacking&s=iRcotofun
+Suggests:

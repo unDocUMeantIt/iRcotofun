@@ -37,6 +37,8 @@
 #' @return An object of class \code{XiMpLe.doc}, or (if \code{file} is specified) no visible
 #'    return value.
 #' @rdname ircotofun
+#' @import XiMpLe
+#' @import base64enc
 #' @export
 #' @examples
 #' q1 <- ask(
