@@ -1,0 +1,6 @@
+feature wishlist:
+ - remove and re-add teams as desired (with automatic adjustment widths in question/answer view)
+ - link to turn off sound for answer (ideally, activate a team with "right" and "wrong" options and show question if "right" was klicked)
+ - better responsiveness for scaling of images for really small resolutions (800x600, 1024x768)
+ - support for <audio> and <video> in questions, answers and title page
+ - include title page in quiz file
