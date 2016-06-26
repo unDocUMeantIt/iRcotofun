@@ -19,17 +19,17 @@ I really couldn't think of a frelling name...
 
 ## Licence
 
-Copyright 2012-2015 Meik Michalke <meik.michalke@hhu.de>
+Copyright 2014-2016 Meik Michalke <meik.michalke@hhu.de>
 
-rk.ANOVA is free software: you can redistribute it and/or modify
+iRcotofun is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-rk.ANOVA is distributed in the hope that it will be useful,
+iRcotofun is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with rk.ANOVA.  If not, see <http://www.gnu.org/licenses/>.
+along with iRcotofun.  If not, see <http://www.gnu.org/licenses/>.
