@@ -1,8 +1,10 @@
 ChangeLog for package iRcotofun
 
-changes in version 0.02-2 (2015-12-16)
+changes in version 0.02-2 (2016-06-26)
 unreleased:
   - this version is under development
+fixed:
+  - license info in README.md
 
 changes in version 0.02-1 (2015-12-16)
 changed:
