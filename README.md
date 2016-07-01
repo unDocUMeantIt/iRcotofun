@@ -1,5 +1,7 @@
 # iRcotofun
 
+[![Flattr this git repo](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=m.eik&url=https://github.com/unDocUMeantIt/iRcotofun&title=iRcotofun&language=en_GB&tags=github&category=software)
+
 Here's an idea for your next office party: This R package creates a one-file jeopardy-like quiz game in HTML. You must come up with the questions and answers yourself, of course.
 
 ![main window](/inst/screenshots/main_window.jpg?raw=true "main window")
